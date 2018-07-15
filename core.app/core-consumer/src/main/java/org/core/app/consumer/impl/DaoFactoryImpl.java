@@ -12,52 +12,76 @@ import org.core.app.consumer.contract.UtilisateurDao;
 
 public class DaoFactoryImpl implements DaoFactory {
 
-	@Override
+	private AuteurDao auteurDao;
 	public AuteurDao getAuteurDao() {
 		// TODO Auto-generated method stub
-		return null;
+		return auteurDao;
+	}
+		public void setAuteurDao(AuteurDao auteurDao) {
+		this.auteurDao = auteurDao;
 	}
 
-	@Override
+	private EditeurDao editeurDao;
 	public EditeurDao getEditeurDao() {
 		// TODO Auto-generated method stub
-		return null;
+		return editeurDao;
 	}
-
-	@Override
+	public void setEditeurDao(EditeurDao editeurDao) {
+		this.editeurDao = editeurDao;
+	}
+	
+	private GenreDao genreDao;
 	public GenreDao getGenreDao() {
 		// TODO Auto-generated method stub
-		return null;
+		return genreDao;
 	}
-
-	@Override
+	public void setGenreDao(GenreDao genreDao) {
+		this.genreDao = genreDao;
+	}
+	
+	private LangueDao langueDao;
 	public LangueDao getLangueDao() {
 		// TODO Auto-generated method stub
-		return null;
+		return langueDao;
 	}
-
-	@Override
+	public void setLangueDao(LangueDao langueDao) {
+		this.langueDao = langueDao;
+	}
+	
+	private OuvrageDao ouvrageDao;
 	public OuvrageDao getOuvrageDao() {
 		// TODO Auto-generated method stub
-		return null;
+		return ouvrageDao;
 	}
-
-	@Override
+	public void setOuvrageDao(OuvrageDao ouvrageDao) {
+		this.ouvrageDao = ouvrageDao;
+	}
+	
+	private PretDao pretDao;
 	public PretDao getPretDao() {
 		// TODO Auto-generated method stub
-		return null;
+		return pretDao;
 	}
-
-	@Override
+	public void setPretDao(PretDao pretDao) {
+		this.pretDao = pretDao;
+	}
+	
+	private StatusDao statusDao;
 	public StatusDao getStatusDao() {
 		// TODO Auto-generated method stub
-		return null;
+		return statusDao;
 	}
-
-	@Override
+	public void setStatusDao(StatusDao statusDao) {
+		this.statusDao = statusDao;
+	}
+	
+	private UtilisateurDao utilisateurDao;
 	public UtilisateurDao getUtilisateurDao() {
 		// TODO Auto-generated method stub
-		return null;
+		return utilisateurDao;
+	}
+	public void setUtilisateurDao(UtilisateurDao utilisateurDao) {
+		this.utilisateurDao = utilisateurDao;
 	}
 
 }
