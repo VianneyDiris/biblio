@@ -11,7 +11,9 @@
 	<bean id="genreManager"  class="org.core.app.business.impl.manager.GenreManagerImpl" />
 	<bean id="langueManager"  class="org.core.app.business.impl.manager.LangueManagerImpl" />
 	<bean id="ouvrageManager"  class="org.core.app.business.impl.manager.OuvrageManagerImpl" />
-	<bean id="pretManager"  class="org.core.app.business.impl.manager.PretManagerImpl" />
+	<bean id="pretManager"  class="org.core.app.business.impl.manager.PretManagerImpl" >
+	<property name="transactionManager" ref="transactionManager" />
+	</bean>
 	<bean id="statusManager" class="org.core.app.business.impl.manager.StatusManagerImpl"/>
 	<bean id="utilisateurManager" class="org.core.app.business.impl.manager.UtilisateurManagerImpl"/>
 
@@ -36,4 +38,7 @@
 		<property name="arguments" ref="daoFactory" />
 	</bean>
 	
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+    <property name="dataSource" ref="dataSourceBiblio"/>
+	</bean>
 </beans>
