@@ -34,14 +34,20 @@
 	<!-- Gestion des dépendances -->
 	<dependencyManagement>
 		<dependencies>
-		<!-- ===== Modules ===== -->
-		<dependency>
+			<!-- ===== Modules ===== -->
+			<dependency>
 				<groupId>${project.groupId}</groupId>
 				<artifactId>annexe-webapp</artifactId>
 				<version>${project.version}</version>
 			</dependency>
-		
-		
+			
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>annexe-model</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+
 			<dependency>
 				<groupId>javax.servlet</groupId>
 				<artifactId>javax.servlet-api</artifactId>
@@ -58,5 +64,6 @@
 	</dependencyManagement>
 	<modules>
 		<module>annexe-webapp</module>
+		<module>annexe-model</module>
 	</modules>
 </project>
