@@ -40,14 +40,22 @@
 				<artifactId>annexe-webapp</artifactId>
 				<version>${project.version}</version>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>${project.groupId}</groupId>
 				<artifactId>annexe-model</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 
-
+			<!-- Framework Apache Struts -->
+			<dependency>
+				<groupId>org.apache.struts</groupId>
+				<artifactId>struts2-bom</artifactId>
+				<version>${struts.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			
 			<dependency>
 				<groupId>javax.servlet</groupId>
 				<artifactId>javax.servlet-api</artifactId>
