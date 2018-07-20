@@ -10,7 +10,7 @@
 <!-- ########################### SITE #############################################-->
 		<!-- Action "index" -->
 		<action name="index">
-			<result>index.jsp</result>
+			<result>jsp/index.jsp</result>
 		</action>
 
 
