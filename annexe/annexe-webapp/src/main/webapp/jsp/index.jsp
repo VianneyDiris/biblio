@@ -19,8 +19,8 @@
 	<div id="navbarCollapse" class="collapse navbar-collapse">
 		<ul class="nav navbar-nav">
 			<li class="active"><s:a action="index">Accueil</s:a></li>
-			<li><s:a>Connexion</s:a></li>
-			<li><s:a>Inscription</s:a></li>			
+			<li><s:a action="connexion">Connexion</s:a></li>
+			<li><s:a action="inscription">Inscription</s:a></li>			
 						
 		</ul>
 	</div>

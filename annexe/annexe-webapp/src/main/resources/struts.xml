@@ -6,11 +6,21 @@
 	<package name="default" extends="struts-default">
 		<!-- Action par défaut -->
 		<default-action-ref name="index" />
-		
-<!-- ########################### SITE #############################################-->
+
+		<!-- ########################### SITE ############################################# -->
 		<!-- Action "index" -->
 		<action name="index">
 			<result>jsp/index.jsp</result>
+		</action>
+
+		<!-- Action "connexion" -->
+		<action name="connexion" class="org.annexe.app.webapp.action.LoginAction">
+			<result>jsp/site/connexion.jsp</result>
+		</action>
+		
+		<!-- Action "index" -->
+		<action name="inscription">
+			<result>jsp/site/inscription.jsp</result>
 		</action>
 
 
