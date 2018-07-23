@@ -7,6 +7,9 @@
         <dependent-module archiveName="annexe-model-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/annexe-model/annexe-model">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="annexe-technical-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/annexe-technical/annexe-technical">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="java-output-path" value="/annexe-webapp/target/classes"/>
         <property name="context-root" value="annexe_-_webapp"/>
     </wb-module>
