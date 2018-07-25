@@ -14,8 +14,7 @@
 		</action>
 
 		<!-- Action "connexion" -->
-		<action name="connexion"
-			class="org.annexe.app.webapp.action.LoginAction">
+		<action name="connexion" class="org.annexe.app.webapp.action.LoginAction">
 			<result>jsp/site/connexion.jsp</result>
 		</action>
 
@@ -24,12 +23,12 @@
 			<result>jsp/site/inscription.jsp</result>
 		</action>
 
-		<action name="register" class="org.annexe.app.webapp.action.LoginAction">
-			<interceptor-ref name="jsonValidationWorkflowStack"></interceptor-ref>
+<!-- 		<action name="register" class="org.annexe.app.webapp.action.LoginAction"> -->
+<!-- 			<interceptor-ref name="jsonValidationWorkflowStack"></interceptor-ref> -->
 
-			<result name="success">jsp/site/ouvrage.jsp</result>
-			<result name="input">jsp/site/connexion.jsp</result>
-		</action>
+<!-- 			<result name="success">jsp/site/ouvrage.jsp</result> -->
+<!-- 			<result name="input">jsp/site/connexion.jsp</result> -->
+<!-- 		</action> -->
 
 
 	</package>

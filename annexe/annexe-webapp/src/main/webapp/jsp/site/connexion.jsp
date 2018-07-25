@@ -31,7 +31,7 @@
 
 	    <!-- Page Content -->
     <div class="container content">
-    <s:form action="register" class="col-lg-6 col-lg-offset-3">
+    <s:form action="connexion" class="col-lg-6 col-lg-offset-3">
       <fieldset class="scheduler-border">
         <legend class="scheduler-border">Se connecter</legend>
  
