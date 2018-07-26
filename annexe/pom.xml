@@ -113,6 +113,6 @@
 	<modules>
 		<module>annexe-webapp</module>
 		<module>annexe-model</module>
- 		 <module>annexe-technical</module>
+ 		<module>annexe-technical</module>
   </modules>
 </project>
