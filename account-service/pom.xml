@@ -8,6 +8,9 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>account-service Maven Webapp</name>
 	<url>http://maven.apache.org</url>
+<properties>
+    <cxf.version>2.7.3</cxf.version>
+</properties>
 	<dependencies>
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -15,6 +18,22 @@
 			<version>3.1.0</version>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+        <groupId>org.apache.cxf</groupId>
+        <artifactId>cxf-rt-databinding-jaxb</artifactId>
+        <version>${cxf.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.cxf</groupId>
+        <artifactId>cxf-rt-frontend-jaxws</artifactId>
+        <version>${cxf.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.cxf</groupId>
+        <artifactId>cxf-rt-transports-http</artifactId>
+        <version>${cxf.version}</version>
+    </dependency>
+		
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
