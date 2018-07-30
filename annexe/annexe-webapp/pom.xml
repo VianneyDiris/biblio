@@ -17,7 +17,7 @@
 	<artifactId>annexe-webapp</artifactId>
 	<packaging>war</packaging>
 
-	<name>${projectName} - Webapp</name>
+	<name>${projectName}-Webapp</name>
 	<url>http://maven.apache.org</url>
 
 	<!-- =============================================================== -->
@@ -51,6 +51,6 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<finalName>${projectName} - webapp</finalName>
+		<finalName>${projectName}-webapp</finalName>
 	</build>
 </project>

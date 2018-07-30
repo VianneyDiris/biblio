@@ -18,7 +18,7 @@
 			<result>jsp/site/connexion.jsp</result>
 		</action>
 
-		<!-- Action "index" -->
+		<!-- Action "inscription" -->
 		<action name="inscription">
 			<result>jsp/site/inscription.jsp</result>
 		</action>
