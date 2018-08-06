@@ -13,6 +13,21 @@
         <param-value>classpath:/bootstrapContext.xml</param-value>
     </context-param>
     
+     <servlet>
+        <servlet-name>cxf</servlet-name>
+        <servlet-class>org.apache.cxf.transport.servlet.CXFServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>cxf</servlet-name>
+        <url-pattern>/services/*</url-pattern>
+    </servlet-mapping>
+
+    <session-config>
+        <session-timeout>60</session-timeout>
+    </session-config>
+    
     <resource-ref>
         <res-ref-name>jdbc/DB_BIBLIO</res-ref-name>
         <res-type>javax.sql.DataSource</res-type>

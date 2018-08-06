@@ -29,7 +29,7 @@
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<spring.version>4.3.11.RELEASE</spring.version>
 		<struts.version>2.5.14.1</struts.version>
-		<cxf.version>2.7.3</cxf.version>
+		<cxf.version>3.2.5</cxf.version>
 	</properties>
 
 	<!-- =============================================================== -->
@@ -149,16 +149,16 @@
 				<version>6.0</version>
 				<scope>provided</scope>
 			</dependency>
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-core</artifactId>
-				<version>${spring.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-web</artifactId>
-				<version>${spring.version}</version>
-			</dependency>
+<!-- 			<dependency> -->
+<!-- 				<groupId>org.springframework</groupId> -->
+<!-- 				<artifactId>spring-core</artifactId> -->
+<!-- 				<version>${spring.version}</version> -->
+<!-- 			</dependency> -->
+<!-- 			<dependency> -->
+<!-- 				<groupId>org.springframework</groupId> -->
+<!-- 				<artifactId>spring-web</artifactId> -->
+<!-- 				<version>${spring.version}</version> -->
+<!-- 			</dependency> -->
 			<dependency>
 				<groupId>org.apache.cxf</groupId>
 				<artifactId>cxf-rt-databinding-jaxb</artifactId>
