@@ -17,7 +17,7 @@
 	<artifactId>bibliotheque-business</artifactId>
 
 	<!-- ===== Informations générales ===== -->
-	<name>${projectName} - business</name>
+	<name>${projectName}-business</name>
 
 	<!-- =============================================================== -->
 	<!-- Properties -->

@@ -17,7 +17,7 @@
 	<artifactId>bibliotheque-consumer</artifactId>
 
 	<!-- ===== Informations générales ===== -->
-	<name>${projectName} - consumer</name>
+	<name>${projectName}-consumer</name>
 
 	<!-- =============================================================== -->
 	<!-- Properties -->

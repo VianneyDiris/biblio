@@ -16,12 +16,11 @@
         <property name="jndiName" value="java:comp/env/jdbc/DB_BIBLIO"/>
     </bean>
     
-    <jaxws:server 
-        serviceClass="service.user.UtilisateurService" address="/user"
-        serviceBean="#utilisateur">
+       <jaxws:server 
+        serviceClass="com.vianney.ws.userservice.UserService" address="/userservice"
+        serviceBean="#userService">
     </jaxws:server>
-    <bean id="utilisateur" class="service.user.UtilisateurServiceImpl" />
-   
-
-     
+    <bean id="userService" class="com.vianney.ws.userservice.UserServiceImpl">
+    <property name="managerFactory" ref="managerFactory" />
+    </bean>
 </beans>

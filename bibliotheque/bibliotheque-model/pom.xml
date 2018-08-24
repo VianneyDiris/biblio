@@ -18,7 +18,7 @@
 	<artifactId>bibliotheque-model</artifactId>
 
 	<!-- ===== Informations générales ===== -->
-	<name>${projectName} - model</name>
+	<name>${projectName}-model</name>
 
 	<!-- =============================================================== -->
 	<!-- Properties -->
