@@ -7,11 +7,16 @@ import javax.jws.WebService;
 
 import com.vianney.ws.userservice.operation.AddUtilisateurRequest;
 import com.vianney.ws.userservice.operation.AddUtilisateurResponse;
+import com.vianney.ws.userservice.operation.GetUtilisateurRequest;
+import com.vianney.ws.userservice.operation.GetUtilisateurResponse;
 
 @WebService(name ="UserService")
 public interface UserService {
 	
 	@WebMethod
-	public  @WebResult(name = "response") AddUtilisateurResponse response(@WebParam(name = "addUtilisateur")AddUtilisateurRequest request);
+	public  @WebResult(name = "addUtilisateur") AddUtilisateurResponse addUtilisateur(@WebParam(name = "addRequest")AddUtilisateurRequest addRequest);
+	
+	@WebMethod
+	public  @WebResult(name = "getUtilisateur") GetUtilisateurResponse getUtilisateur(@WebParam(name = "getRequest")GetUtilisateurRequest getRequest);
 
 }
