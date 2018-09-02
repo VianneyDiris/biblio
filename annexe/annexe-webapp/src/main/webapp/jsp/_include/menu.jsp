@@ -13,9 +13,23 @@
 	<div id="navbarCollapse" class="collapse navbar-collapse">
 		<ul class="nav navbar-nav">
 			<li class="active"><s:a action="index">Accueil</s:a></li>
-			<li><s:a action="connexion">Connexion</s:a></li>
-			<li><s:a action="inscription">Inscription</s:a></li>			
+			<s:if test="#session.user">
+					<li><s:a action="ouvrage">Ouvrage</s:a></li>
+			</s:if>
+			<s:else>
+			<li><s:a action="login">Connexion</s:a></li>
+			<li><s:a action="inscription">Inscription</s:a></li>				
+			</s:else>
+					
 						
 		</ul>
+		<ul class="nav navbar-nav navbar-right">
+				<s:if test="#session.user">
+					<li><s:a>
+							<s:property value="#session.user.nom" />
+						</s:a></li>
+					<li><s:a action="logout">Déconnexion</s:a></li>
+				</s:if>
+			</ul>
 		</div>
 	</nav>

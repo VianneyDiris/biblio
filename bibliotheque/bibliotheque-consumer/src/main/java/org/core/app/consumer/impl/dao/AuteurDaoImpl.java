@@ -1,5 +1,6 @@
 package org.core.app.consumer.impl.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.core.app.consumer.contract.AuteurDao;
@@ -39,12 +40,16 @@ public class AuteurDaoImpl extends AbstractDaoImpl implements AuteurDao {
 	@Override
 	public List<Auteur> searchAuteurByOuvrageId(Integer id) {
 		// TODO Auto-generated method stub
-		String vsql ="SELECT * FROM public.auteur INNER JOIN public.ouvrage_auteur ON auteur.id=ouvrage_auteur.auteur_id WHERE ouvrage_auteur.ouvrage_id=?";
+		String vsql ="SELECT auteur_id FROM public.ouvrage_auteur WHERE ouvrage_id=?";
 		
 		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
-		AuteurRM rowAuteur = new AuteurRM();
 		
-		List<Auteur> listAuteur = vJdbcTemplate.query(vsql, rowAuteur);
+		List<Integer> listInt = vJdbcTemplate.queryForList(vsql, new Object[] { id },Integer.class);	
+		List<Auteur> listAuteur = new ArrayList<Auteur>();
+		
+		for(int i = 0;i<listInt.size();i++) {
+			listAuteur.add(find(listInt.get(i)));
+		}
 				
 		return listAuteur;
 	}

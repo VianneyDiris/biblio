@@ -44,15 +44,13 @@ public class UtilisateurDaoImpl extends AbstractDaoImpl implements UtilisateurDa
 		UtilisateurRM rowUser = new UtilisateurRM();
 		
 		Utilisateur user = (Utilisateur)vJdbcTemplate.queryForObject(vsql, new Object[] { mail }, rowUser);
-		if(password.equals(user.getPassword())) {
-			return user;
-		}
+
 		
 		
-//		if(BCrypt.checkpw(password, user.getPassword())) {
-//            System.out.println("Correct login credentials");
-//            return user;
-//            }
+		if(BCrypt.checkpw(password, user.getPassword())) {
+            System.out.println("Correct login credentials");
+            return user;
+            }
 		else {
 			return null;
 		}

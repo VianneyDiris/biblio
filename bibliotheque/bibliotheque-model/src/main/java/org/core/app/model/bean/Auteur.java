@@ -1,5 +1,8 @@
 package org.core.app.model.bean;
 
+import javax.xml.bind.annotation.XmlType;
+
+@XmlType(name = "Auteur")
 public class Auteur {
 	
 	// ==================== Attributs ====================

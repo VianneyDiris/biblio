@@ -11,19 +11,20 @@
 
 	<!-- Page Content -->
 	<div class="container content">
-		<s:form action="enregistrer" class="col-lg-6 col-lg-offset-3">
+		<s:form action="inscription" class="col-lg-6 col-lg-offset-3">
 			<fieldset class="scheduler-border">
 				<legend class="scheduler-border">Création du compte</legend>
+				<s:actionmessage/>
 				<div class="form-inline">
 					<s:label for="userName" class="espace">Nom</s:label>
-					<s:textfield name="userName" class="form-control" placeholder="nom" label="Nom"/>
+					<s:textfield name="nom" class="form-control" placeholder="nom" label="Nom"/>
 					
 					<s:label for="userSurname" class="espace" >Prenom</s:label>
-					<s:textfield name="userSurname" class="form-control" placeholder="prénom"/>
+					<s:textfield name="prenom" class="form-control" placeholder="prénom"/>
 				</div>
 				<div class="form-group">
 					<s:label for="mail">Mail</s:label>
-					<s:textfield name="mail" class="form-control" placeholder="prénom"/>
+					<s:textfield name="mail" class="form-control" placeholder="mail"/>
 				</div>
 				<div class="form-group">
 					<s:label for="password">Mot de passe</s:label>

@@ -17,13 +17,13 @@
 
 				<s:iterator value="listOuvrage">
 				<div class="list">
-					<div class="produit col-lg-3">
+					<div class="produit col-lg-4">
 						<div class="panel panel-default">
 							<div class="panel-heading">
 								<s:property value="titre" />
 							</div>
 							<div class="panel-body">
-								<img alt="img" class="img_list" src="resource_image/<s:property value="photos"/>">
+								<img alt="img" class="img_list" src="http://localhost:8080/bibliotheque-webapp/images/<s:property value="photos"/>">
 
 								<p></p>
 								<s:a action="ouvrage_detail"><s:param name="id" value="id" /><button class="btn btn-default">Voir cet ouvrage</button></s:a>

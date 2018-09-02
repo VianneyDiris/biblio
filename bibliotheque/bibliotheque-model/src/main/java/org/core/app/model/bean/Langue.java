@@ -1,5 +1,8 @@
 package org.core.app.model.bean;
 
+import javax.xml.bind.annotation.XmlType;
+
+@XmlType(name = "Langue")
 public class Langue {
 	
 	// ==================== Attributs ====================

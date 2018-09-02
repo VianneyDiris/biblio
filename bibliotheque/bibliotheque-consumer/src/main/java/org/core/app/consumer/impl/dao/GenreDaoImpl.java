@@ -1,5 +1,6 @@
 package org.core.app.consumer.impl.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.core.app.consumer.contract.GenreDao;
@@ -39,12 +40,17 @@ public class GenreDaoImpl extends AbstractDaoImpl implements GenreDao {
 	@Override
 	public List<Genre> searchGenreByOuvrageId(Integer id) {
 		// TODO Auto-generated method stub
-		String vsql="SELECT * FROM public.genre INNER JOIN public.ouvrage_genre ON genre.id=ouvrage_genre.genre_id WHERE ouvrage_genre.ouvrage_id=?";
+		String vsql="SELECT genre_id FROM public.ouvrage_genre WHERE ouvrage_id=?";
 		
 		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
-		GenreRM rowGenre = new GenreRM();
+		List<Integer> listInt = vJdbcTemplate.queryForList(vsql, new Object[] { id },Integer.class);
+
 		
-		List<Genre> listGenre = vJdbcTemplate.query(vsql, rowGenre);
+		List<Genre> listGenre = new ArrayList<Genre>();
+		
+		for(int i = 0;i<listInt.size();i++) {
+			listGenre.add(find(listInt.get(i)));
+		}
 		
 		return listGenre;
 	}

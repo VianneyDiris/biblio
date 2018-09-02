@@ -2,6 +2,9 @@ package org.core.app.model.bean;
 
 import java.util.List;
 
+import javax.xml.bind.annotation.XmlType;
+
+@XmlType(name = "Ouvrage")
 public class Ouvrage {
 	
 	// ==================== Attributs ====================
