@@ -11,7 +11,7 @@
 
 	    <!-- Page Content -->
     <div class="container content">
-    <s:form action="login" class="col-lg-6 col-lg-offset-3">
+    <s:form action="login" class="col-lg-7 col-lg-offset-3">
       <fieldset class="scheduler-border">
         <legend class="scheduler-border">Se connecter</legend>
  

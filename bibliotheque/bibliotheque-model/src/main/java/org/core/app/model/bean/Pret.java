@@ -2,6 +2,8 @@ package org.core.app.model.bean;
 
 import java.util.Date;
 
+import javax.xml.bind.annotation.XmlType;
+@XmlType(name = "Pret")
 public class Pret {
 	
 	// ==================== Attributs ====================

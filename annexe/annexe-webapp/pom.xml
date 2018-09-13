@@ -81,6 +81,9 @@
 								<wsdlOption>
 									<wsdl>${basedir}/src/main/resources/wsdl/gestionouvrage.wsdl</wsdl>
 								</wsdlOption>
+								<wsdlOption>
+									<wsdl>${basedir}/src/main/resources/wsdl/gestionpret.wsdl</wsdl>
+								</wsdlOption>
 							</wsdlOptions>
 						</configuration>
 						<goals>

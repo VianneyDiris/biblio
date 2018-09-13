@@ -15,6 +15,7 @@
 			<li class="active"><s:a action="index">Accueil</s:a></li>
 			<s:if test="#session.user">
 					<li><s:a action="ouvrage">Ouvrage</s:a></li>
+					<li><s:a action="pret">Pret</s:a></li>
 			</s:if>
 			<s:else>
 			<li><s:a action="login">Connexion</s:a></li>

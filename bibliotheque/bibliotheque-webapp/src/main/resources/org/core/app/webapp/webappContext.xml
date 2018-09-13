@@ -31,4 +31,12 @@
     <bean id="gestionouvrage" class="com.vianney.ws.gestionouvrage.GestionOuvrageImpl">
     <property name="managerFactory" ref="managerFactory" />
     </bean>
+    
+     <jaxws:server 
+        serviceClass="com.vianney.ws.gestionpret.GestionPret" address="/gestionpret"
+        serviceBean="#gestionpret">
+    </jaxws:server>
+    <bean id="gestionpret" class="com.vianney.ws.gestionpret.GestionPretImpl">
+    <property name="managerFactory" ref="managerFactory" />
+    </bean>
 </beans>
