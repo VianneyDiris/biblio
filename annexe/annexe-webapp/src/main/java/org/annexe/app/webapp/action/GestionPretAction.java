@@ -16,6 +16,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
 import org.annexe.app.webapp.convert.ConvertOuvrage;
 import org.annexe.app.webapp.convert.ConvertUser;
 import org.apache.struts2.interceptor.SessionAware;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.vianney.ws.gestionouvrage.GestionOuvrage;
@@ -28,6 +30,7 @@ import com.vianney.ws.gestionpret.Status;
 import com.vianney.ws.gestionpret.Utilisateur;
 
 @SuppressWarnings("serial")
+@Component
 public class GestionPretAction extends ActionSupport implements SessionAware{
 	// ==================== Attributs ====================
 	// ----- Paramètres en entrée
@@ -36,6 +39,11 @@ public class GestionPretAction extends ActionSupport implements SessionAware{
 	private Map<String, Object> session;
 	private Integer id;
 	
+	@Value("${duree.prolongation}")
+	private int prolongationPret;
+	
+	@Value("${duree.emprunt}")
+	private int dureePret;
 	
 	// ----- Paramètres en sortie
 	private Pret pret;
@@ -47,23 +55,18 @@ public class GestionPretAction extends ActionSupport implements SessionAware{
 	public Utilisateur getUser() {
 		return user;
 	}
-
 	public void setUser(Utilisateur user) {
 		this.user = user;
 	}
-
 	public Ouvrage getOuvrage() {
 		return ouvrage;
 	}
-
 	public void setOuvrage(Ouvrage ouvrage) {
 		this.ouvrage = ouvrage;
 	}
-
 	public Pret getPret() {
 		return pret;
 	}
-
 	public void setPret(Pret pret) {
 		this.pret = pret;
 	}
@@ -77,21 +80,18 @@ public class GestionPretAction extends ActionSupport implements SessionAware{
 	public Integer getId() {
 		return id;
 	}
-
 	public void setId(Integer id) {
 		this.id = id;
 	}
 	public List<Pret> getListPret() {
 		return listPret;
 	}
-
 	public void setListPret(List<Pret> listPret) {
 		this.listPret = listPret;
 	}
 	public Date getDateReservation() {
 		return dateReservation;
 	}
-
 	public void setDateReservation(Date dateReservation) {
 		this.dateReservation = dateReservation;
 	}
@@ -102,6 +102,21 @@ public class GestionPretAction extends ActionSupport implements SessionAware{
 
 	public void setDateFinReservation(Date dateFinReservation) {
 		this.dateFinReservation = dateFinReservation;
+	}
+	public int getProlongationPret() {
+		return prolongationPret;
+	}
+
+	public void setProlongationPret(int prolongationPret) {
+		this.prolongationPret = prolongationPret;
+	}
+
+	public int getDureePret() {
+		return dureePret;
+	}
+
+	public void setDureePret(int dureePret) {
+		this.dureePret = dureePret;
 	}
 
 	// ==================== Méthodes ====================
@@ -123,7 +138,7 @@ public class GestionPretAction extends ActionSupport implements SessionAware{
 		
 		LocalDateTime currentTime = LocalDateTime.now();
 		LocalDateTime currentTime2 = LocalDateTime.now();
-		currentTime2=currentTime.plus(4, ChronoUnit.WEEKS);
+		currentTime2=currentTime.plus(dureePret, ChronoUnit.WEEKS);
 		
 		LocalDate date = currentTime.toLocalDate();
 		GregorianCalendar gcal = GregorianCalendar.from(date.atStartOfDay(ZoneId.systemDefault()));
@@ -204,7 +219,7 @@ public class GestionPretAction extends ActionSupport implements SessionAware{
 		
 		XMLGregorianCalendar xCal = pret.getDateFin();
 		LocalDateTime newDateFin = xCal.toGregorianCalendar().toZonedDateTime().toLocalDateTime();
-		newDateFin = newDateFin.plus(4, ChronoUnit.WEEKS);
+		newDateFin = newDateFin.plus(prolongationPret, ChronoUnit.WEEKS);
 		
 		LocalDate dateF = newDateFin.toLocalDate();
 		GregorianCalendar gcal2 = GregorianCalendar.from(dateF.atStartOfDay(ZoneId.systemDefault()));
