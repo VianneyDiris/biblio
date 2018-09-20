@@ -1,6 +1,5 @@
 package com.batch.app.mail;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Properties;
 import javax.mail.Message;
@@ -31,7 +30,6 @@ public class Report {
         props.put("mail.smtp.port", "587");
         props.put("mail.smtp.auth", "true");
         //Establishing a session with required user details
-        System.out.println(mail+password);
         Session session = Session.getInstance(props, new javax.mail.Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
                 return new PasswordAuthentication(mail, password);
@@ -47,7 +45,6 @@ public class Report {
             InternetAddress[] address = InternetAddress.parse(to, true);
             //Setting the recepients from the address variable
             msg.setRecipients(Message.RecipientType.TO, address);
-            String timeStamp = new SimpleDateFormat("yyyymmdd_hh-mm-ss").format(new Date());
             msg.setSubject("Fin de location");
             msg.setSentDate(new Date());
             msg.setText("Merci de bien vouloir nous retourner les ouvrages suivants");
