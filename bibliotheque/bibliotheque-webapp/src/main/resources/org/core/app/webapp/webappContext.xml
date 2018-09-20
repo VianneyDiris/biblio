@@ -39,4 +39,12 @@
     <bean id="gestionpret" class="com.vianney.ws.gestionpret.GestionPretImpl">
     <property name="managerFactory" ref="managerFactory" />
     </bean>
+    
+    <jaxws:server 
+        serviceClass="com.vianney.ws.gestionrelance.GestionRelance" address="/gestionrelance"
+        serviceBean="#gestionrelance">
+    </jaxws:server>
+    <bean id="gestionrelance" class="com.vianney.ws.gestionrelance.GestionRelanceImpl">
+    <property name="managerFactory" ref="managerFactory" />
+    </bean>
 </beans>

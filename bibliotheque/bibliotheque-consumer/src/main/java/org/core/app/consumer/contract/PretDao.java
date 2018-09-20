@@ -1,5 +1,6 @@
 package org.core.app.consumer.contract;
 
+import java.util.Date;
 import java.util.List;
 
 import org.core.app.model.bean.Ouvrage;
@@ -15,6 +16,8 @@ public interface PretDao {
 	List<Pret> searchPretByUtilisateur(Utilisateur user);
 	
 	List<Pret> searchPretByOuvrage(Ouvrage ouvrage);
+	
+	List<Pret> listPretNonRendu(Date date);
 	
 	void addPret(Pret pret);
 	

@@ -1,5 +1,6 @@
 package org.core.app.consumer.impl.dao;
 
+import java.util.Date;
 import java.util.List;
 
 import org.core.app.consumer.contract.PretDao;
@@ -86,6 +87,18 @@ public class PretDaoImpl extends AbstractDaoImpl implements PretDao {
 		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
 		vJdbcTemplate.update(vsql,new Object[] { pret.getId() });
 		
+	}
+
+	@Override
+	public List<Pret> listPretNonRendu(Date date) {
+		// TODO Auto-generated method stub
+		String vsql="SELECT * FROM public.pret WHERE status_id=2 AND date_fin<?";
+		
+		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
+		PretRM rowPret = new PretRM();
+		
+		List<Pret> listPret = vJdbcTemplate.query(vsql,new Object[] { date } ,rowPret);
+		return listPret;
 	}
 
 	

@@ -1,5 +1,6 @@
 package org.core.app.business.contract.manager;
 
+import java.util.Date;
 import java.util.List;
 
 import org.core.app.model.bean.Ouvrage;
@@ -16,6 +17,8 @@ public interface PretManager {
 	List<Pret> searchPretByUtilisateur(Utilisateur user)throws NotFoundException;
 	
 	List<Pret> searchPretByOuvrage(Ouvrage ouvrage)throws NotFoundException;
+	
+	List<Pret> listPretNonRendu(Date date) throws NotFoundException;
 	
 	void addPret(Pret pret);
 	

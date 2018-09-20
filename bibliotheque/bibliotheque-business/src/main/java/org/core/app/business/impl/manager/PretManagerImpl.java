@@ -1,5 +1,6 @@
 package org.core.app.business.impl.manager;
 
+import java.util.Date;
 import java.util.List;
 
 import org.core.app.business.contract.manager.PretManager;
@@ -82,6 +83,12 @@ public class PretManagerImpl extends AbstractManagerImpl implements PretManager 
 		// TODO Auto-generated method stub
 		logger.info("méthode deletePret(Pret pret)");
 		getDaoFactory().getPretDao().deletePret(pret);
+	}
+
+	@Override
+	public List<Pret> listPretNonRendu(Date date) throws NotFoundException {
+		// TODO Auto-generated method stub
+		return getDaoFactory().getPretDao().listPretNonRendu(date);
 	}
 
 }
