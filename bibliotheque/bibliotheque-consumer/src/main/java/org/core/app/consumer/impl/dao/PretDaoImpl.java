@@ -101,6 +101,18 @@ public class PretDaoImpl extends AbstractDaoImpl implements PretDao {
 		return listPret;
 	}
 
+	@Override
+	public List<Pret> listPretNonRenduByUser(Utilisateur user,Date date) {
+		// TODO Auto-generated method stub
+		String vsql="SELECT * FROM public.pret WHERE status_id=2 AND date_fin<? AND utilisateur_id=?";
+		
+		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
+		PretRM rowPret = new PretRM();
+		
+		List<Pret> listPret = vJdbcTemplate.query(vsql,new Object[] { date,user.getId() } ,rowPret);
+		return listPret;
+	}
+
 	
 
 }

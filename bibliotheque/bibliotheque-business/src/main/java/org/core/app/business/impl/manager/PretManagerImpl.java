@@ -91,4 +91,10 @@ public class PretManagerImpl extends AbstractManagerImpl implements PretManager 
 		return getDaoFactory().getPretDao().listPretNonRendu(date);
 	}
 
+	@Override
+	public List<Pret> listPretNonRenduByUser(Utilisateur user, Date date) throws NotFoundException {
+		// TODO Auto-generated method stub
+		return getDaoFactory().getPretDao().listPretNonRenduByUser(user,date);
+	}
+
 }
