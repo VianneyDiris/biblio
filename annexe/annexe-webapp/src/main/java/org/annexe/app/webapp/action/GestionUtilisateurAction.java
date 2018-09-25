@@ -6,7 +6,6 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.vianney.ws.gestionuser.GestionUser;
 import com.vianney.ws.gestionuser.GestionUserService;
 import com.vianney.ws.gestionuser.Utilisateur;
-import org.springframework.security.crypto.bcrypt.BCrypt;
 
 @SuppressWarnings("serial")
 public class GestionUtilisateurAction extends ActionSupport {
@@ -61,12 +60,11 @@ public class GestionUtilisateurAction extends ActionSupport {
 	        	 GestionUserService userService = new GestionUserService();		
 				 GestionUser serviceUser = userService.getGestionUserPort();
 				 Utilisateur user = new Utilisateur();
-				 String hashed = BCrypt.hashpw(password, BCrypt.gensalt());
 				 user.setId(0);
 				 user.setNom(nom);
 				 user.setPrenom(prenom);
 				 user.setMail(mail);
-				 user.setPassword(hashed);
+				 user.setPassword(password);
 				 
 				 boolean bool = serviceUser.addUtilisateur(user);
 				 

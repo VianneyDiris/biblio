@@ -73,9 +73,10 @@ public class UtilisateurDaoImpl extends AbstractDaoImpl implements UtilisateurDa
 	public void addUtilisateur(Utilisateur user) {
 		// TODO Auto-generated method stub
 		String vsql = "INSERT INTO public.utilisateur (nom,prenom,mail,password) VALUES (?,?,?,?)";
+		String hashed = BCrypt.hashpw(user.getPassword(), BCrypt.gensalt());
 		
 		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
-		vJdbcTemplate.update(vsql,user.getNom(),user.getPrenom(),user.getMail(),user.getPassword());
+		vJdbcTemplate.update(vsql,user.getNom(),user.getPrenom(),user.getMail(),hashed);
 		
 	}
 
