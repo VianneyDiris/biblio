@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-import com.batch.app.mail.Report;
+import com.batch.app.mail.ApacheMail;
 import com.vianney.ws.gestionrelance.GestionRelance;
 import com.vianney.ws.gestionrelance.GestionRelanceService;
 import com.vianney.ws.gestionrelance.Pret;
@@ -22,9 +22,9 @@ import com.vianney.ws.gestionrelance.Utilisateur;
 public class BatchTasklet implements Tasklet {
  
   @Value("${batch.message}") private String message;
-  
+ 
   @Autowired
-  private Report report;
+  private ApacheMail mail;
  
   public RepeatStatus execute(StepContribution contribution, ChunkContext chunkContext) throws Exception {
     System.out.println(message);
@@ -54,9 +54,10 @@ public class BatchTasklet implements Tasklet {
    while(it2.hasNext()) {
 	   Utilisateur user = it2.next();
 	   List<Pret> listPret = service.getListPretNonRenduByUser(user);
-	   report.sendMail(user, listPret);
+	   mail.send(user,listPret);
    }
-    
+   
+   
     return RepeatStatus.FINISHED;
   }
 
