@@ -67,11 +67,7 @@
 									<div class="col-lg-2"></div>
 								</div>
 								<div>
-									<p></p>
-									<s:a action="pret_detail">
-										<s:param name="id" value="id" />
-										<button class="btn btn-default">Voir ce prêt</button>
-									</s:a>
+									
 								</div>
 
 							</div>

@@ -14,7 +14,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<!-- propriétés utilisées dans la dernière partie de cet article -->
-		<java.version>1.7</java.version>
+		<java.version>1.8</java.version>
 		<package.directory>${project.build.directory}/${name}</package.directory>
 		<main.class>com.batch.app.scheduler.App</main.class>
 

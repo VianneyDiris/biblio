@@ -34,7 +34,7 @@ public class BatchTasklet implements Tasklet {
     List<Pret> listNonRendu = service.getListPretNonRendu();
     Iterator<Pret> it = listNonRendu.iterator();
     
-    List<Utilisateur> listUser = new ArrayList<>();
+    List<Utilisateur> listUser = new ArrayList<Utilisateur>();
       
     while(it.hasNext()) {
     	Pret pret = it.next();
