@@ -92,7 +92,7 @@ public class PretDaoImpl extends AbstractDaoImpl implements PretDao {
 	@Override
 	public List<Pret> listPretNonRendu(Date date) {
 		// TODO Auto-generated method stub
-		String vsql="SELECT * FROM public.pret WHERE status_id=2 AND date_fin<?";
+		String vsql="SELECT * FROM public.pret WHERE status_id=1 AND date_fin<?";
 		
 		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
 		PretRM rowPret = new PretRM();
@@ -104,7 +104,7 @@ public class PretDaoImpl extends AbstractDaoImpl implements PretDao {
 	@Override
 	public List<Pret> listPretNonRenduByUser(Utilisateur user,Date date) {
 		// TODO Auto-generated method stub
-		String vsql="SELECT * FROM public.pret WHERE status_id=2 AND date_fin<? AND utilisateur_id=?";
+		String vsql="SELECT * FROM public.pret WHERE status_id=1 AND date_fin<? AND utilisateur_id=?";
 		
 		JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
 		PretRM rowPret = new PretRM();

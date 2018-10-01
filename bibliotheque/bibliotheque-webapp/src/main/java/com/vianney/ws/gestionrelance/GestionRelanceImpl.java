@@ -23,7 +23,7 @@ public class GestionRelanceImpl implements GestionRelance {
 		// TODO Auto-generated method stub
 		Date date = new Date();
 		List<Pret> listNonRendu = new ArrayList<Pret>();
-		
+				
 		try {
 			listNonRendu=managerFactory.getPretManager().listPretNonRendu(date);
 		} catch (NotFoundException e) {

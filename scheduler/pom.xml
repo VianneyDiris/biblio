@@ -139,7 +139,7 @@
 							<finalName>${artifactId}-${version}</finalName>
 							<outputDirectory>${package.directory}/</outputDirectory>
 							<excludes>
-								<!-- les fichiers .properties ne seront pas dans le jar -->
+								les fichiers .properties ne seront pas dans le jar
 								<exclude>*.properties</exclude>
 							</excludes>
 							<archive>
@@ -192,7 +192,7 @@
 								<resource>
 									<directory>src/main/resources/</directory>
 									<excludes>
-										<!-- le fichier job-config.xml reste dans le jar -->
+										le fichier job-config.xml reste dans le jar
 										<exclude>*.xml</exclude>
 									</excludes>
 								</resource>
